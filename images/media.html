@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00c853',
+                        secondary: '#2962ff'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '2px',
+                        DEFAULT: '4px',
+                        'md': '8px',
+                        'lg': '12px',
+                        'xl': '16px',
+                        '2xl': '20px',
+                        '3xl': '24px',
+                        'full': '9999px',
+                        'button': '4px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            min-height: auto;
+            background-color: #000010;
+            color: #ffffff;
+        }
+        .card-gradient {
+            background: linear-gradient(135deg, rgba(10,15,28,0.9) 0%, rgba(10,15,28,0.95) 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="mx-auto max-w-screen-xl">
+            <section class="px-4 sm:px-8 py-16">
+                <div class="max-w-6xl mx-auto">            
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-[#0a0f1c] p-2 rounded-lg" style="margin-bottom: 40px">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold">GBSN</span>
+                                <span class="text-xl">RALLY</span>
+                                <span class="text-primary">+212% Gain</span>
+                            </div>
+                            <img src="gsbn.png" class="w-full rounded-md mb-4 clickable-image" alt="Stock Chart 1" style="cursor: pointer; transition: transform 0.3s ease;">
+                        </div>
+                    
+                        <div class="bg-[#0a0f1c] p-2 rounded-lg" style="margin-bottom: 40px">
+                           <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold">TLPH</span>
+                                <span class="text-xl">RALLY</span>
+                                <span class="text-primary">+792% Gain</span>
+                            </div>
+                            <img src="TPH.png" class="w-full rounded-md mb-4 clickable-image" alt="Stock Chart 2">
+                        </div>
+
+                        <div class="bg-[#0a0f1c] p-2 rounded-lg" style="margin-bottom: 40px">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold">NNUP</span>
+                                <span class="text-xl">RALLY</span>
+                                <span class="text-primary">+1,014% Gain</span>
+                            </div>
+                            <img src="nnup.png" class="w-full rounded-md mb-4 clickable-image" alt="Stock Chart 3">
+                        </div>
+
+                        <div class="bg-[#0a0f1c] p-2 rounded-lg" style="margin-bottom: 40px">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold">UBIQ</span>
+                                <span class="text-xl">RALLY</span>
+                                <span class="text-primary">+235% Gain</span>
+                            </div>
+                            <img src="ubiq.png" class="w-full rounded-md mb-4 clickable-image" alt="Stock Chart 4">
+                        </div>
+                    </div>
+
+                    <!-- 放大图片的模态框 -->
+                    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+                        <div class="relative">
+                            <img id="modalImage" class="max-w-[90vw] max-h-[90vh] rounded-md" src="" alt="Enlarged Image">
+                            <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-2xl">×</button>
+                        </div>
+                    </div>
+
+                    <script>
+                        // 获取所有带有 'clickable-image' 类的图片
+                        const images = document.querySelectorAll('.clickable-image');
+                        const modal = document.getElementById("modal");
+                        const modalImage = document.getElementById("modalImage");
+
+                        // 遍历所有图片，添加点击事件
+                        images.forEach((img) => {
+                            img.addEventListener("click", function() {
+                                // 判断模态框是否已经显示
+                                if (modal.classList.contains("hidden")) {
+                                    modal.classList.remove("hidden");
+                                    modalImage.src = img.src;
+                                } else {
+                                    closeModal();
+                                }
+                            });
+                        });
+
+                        // 关闭模态框
+                        function closeModal() {
+                            modal.classList.add("hidden");
+                            modalImage.src = "";
+                        }
+                    </script>
+
+                </div>
+                <video controls poster="poster-image.png" style="width: 80%; position: relative; height: auto; left: 50%; transform: translateX(-50%); margin-bottom: 10px;">
+                      <source src="../../0509-网页设计/images/Stock.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                </video>
+            </section>
+    </div>
+</body>
+</html>

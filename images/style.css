@@ -1,0 +1,65 @@
+/* 通用样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black; /* 设置背景为黑色 */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* 图片区域的样式 */
+.image-section {
+    margin: 0; /* 设置每个div的边距为0 */
+    width: 100%; /* 图片宽度占满父容器 */
+}
+
+.desktop-image, .mobile-image {
+    display: block;
+    width: 100%; /* 设置图片宽度为父容器的100% */
+}
+
+/* 桌面端样式 */
+@media (min-width: 769px) {
+    .desktop-image {
+        width: 100%; /* 在桌面端图片宽度设置为1920px */
+        height: 100%;  /* 高度设置为100%以保证正常比例 */
+        object-fit: contain; /* 保持图片比例 */
+    }
+
+    .mobile-image {
+        display: none; /* 桌面端隐藏手机端图片 */
+    }
+	.button{
+	    position: absolute; 
+	    width: 50%; 
+	    bottom: 7%; 
+	    left: 30%; 
+	    transform: translateX(-53%)
+    }
+}
+
+/* 手机端样式 */
+@media (max-width: 768px) {
+    .desktop-image {
+        display: none; /* 手机端隐藏桌面端图片 */
+    }
+
+    .mobile-image {
+        width: 100%; /* 在手机端图片宽度设置为768px */
+        height: 100%;  /* 高度自适应，保证正常比例 */
+        margin: 0 auto; /* 居中显示 */
+        object-fit: contain; /* 保持图片比例 */
+	}
+	.button{
+		display: block;
+		width: 70%;
+		position: absolute;
+		bottom: 10px;
+		left: 50%;
+		transform: translateX(-50%)
+	}
+}
