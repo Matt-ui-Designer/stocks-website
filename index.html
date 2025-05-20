@@ -4,51 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock Vane</title>
+    
     <link rel="stylesheet" href="images/style.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* 限定作用范围，仅应用于表单 */
+        .custom-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 40px;
+        }
+
+        .custom-form-container h2 {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .custom-form-container p {
+            color: white;
+            font-size: 12px;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .custom-form-container input,
+        .custom-form-container select,
+        .custom-form-container button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .custom-form-container input::placeholder,
+        .custom-form-container select::placeholder {
+            color: #888;
+        }
+
+        .custom-form-container input,
+        .custom-form-container select {
+            background-color: #333;
+            color: white;
+            border: 1px solid #444;
+        }
+
+        .custom-form-container input:focus,
+        .custom-form-container select:focus {
+            outline: none;
+            border-color: #00c853;
+        }
+
+        .custom-form-container button {
+            background-color: #00c853;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .custom-form-container button:hover {
+            background-color: #007a33;
+        }
+
+        /* 设置下拉框样式 */
+        .custom-form-container select {
+            background: #333;
+            border: 1px solid #444;
+            color: white;
+        }
+
+        .custom-form-container select option {
+            background-color: #444;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <!-- 图片区域 -->
         <div class="image-section" style="position: relative">
-			<a href="https://www.youtube.com/" class="button">
-			<img class="button" src="images/button.png" alt="Button">
-			</a>
-            <img class="desktop-image" src="images/web-1.png" alt="Desktop Image 1">
-            <img class="mobile-image" src="images/web-Phone-1.png" alt="Mobile Image 1">
+            <a href="https://www.youtube.com/" class="button">
+            <img class="button" src="images/button.webp" alt="Button">
+            </a>
+            <img class="desktop-image" src="images/web-1.webp" alt="Desktop Image 1">
+            <img class="mobile-image" src="images/web-Phone-1.webp" alt="Mobile Image 1">
         </div>
+        
         <div class="image-section">
-            <img class="desktop-image" src="images/web-2.png" alt="Desktop Image 2">
-            <img class="mobile-image" src="images/web-Phone-2.png" alt="Mobile Image 2">
+            <img class="desktop-image" src="images/web-2.webp" alt="Desktop Image 2">
+            <img class="mobile-image" src="images/web-Phone-2.webp" alt="Mobile Image 2">
         </div>
+        
         <!-- 表单区域 -->    
-		<div class="form-container">
-            <iframe src="images/user form.html" style="width:100%; height:1000px; border:none;"></iframe>
+        <div class="custom-form-container" style="margin-bottom: 60px;">
+            <h2 style="color: #00c853; margin-bottom: 10px">Get Free Stock Pick & Trading Tips</h2>
+            <p style="text-align: center; sans-sereif; font-size:18px; margin-bottom: 10px">Submit Below Application NOW to Get our instant Algo Stock Alerts with just 30 Seconds!</p>
+            <form>
+                <div>
+                    <label for="name" class="text-sm" style="color: aliceblue">Name*</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+
+                <div>
+                    <label for="age" class="text-sm" style="color: aliceblue">Age</label>
+                    <input type="number" id="age" placeholder="Enter your age" min="25" max="120" step="1">
+                </div>
+
+                <div>
+                    <label for="email" class="text-sm" style="color: aliceblue">Email*</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+
+                <div>
+                    <label for="phone" class="text-sm" style="color: aliceblue">Whatsapp Phone Number*</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <div>
+                    <label for="experience" class="text-sm" style="color: aliceblue">Trading Experience</label>
+                    <select id="experience">
+                        <option disabled selected>-Select-</option>
+                        <option>Beginner</option>
+                        <option>Less Than 1 Year</option>
+                        <option>1 To 3 Years</option>
+                        <option>More Than 3 Years</option>
+                    </select>
+                </div>
+
+                <button type="submit" style="font-size: 20px">Get Free Stock Picks & Trading Tips</button>
+
+                <p style="color: #7B7B7B">*Please ensure that you have Downloaded WhatsApp and the WhatsApp number you provide is correct.</p>
+                <p style="color: #7B7B7B">For iOS User,
+                    <a href="https://apps.apple.com/app/whatsapp-messenger/id310633997" class="text-blue-400 underline" target="_blank" style="color: #00C853">Click Here To Download WhatsApp.</a>
+                </p>
+                <p style="color: #7B7B7B">For Android User,
+                    <a href="https://play.google.com/store/apps/details?id=com.whatsapp" class="text-blue-400 underline" target="_blank" style="color: #00C853">Click Here To Download WhatsApp</a>.
+                </p>
+            </form>
         </div>
-		 <!-- 图片区域 -->
+
+        <!-- 图片区域 -->
         <div class="image-section">
-            <img class="desktop-image" src="images/web-4.png" alt="Desktop Image 4">
-            <img class="mobile-image" src="images/web-Phone-4.png" alt="Mobile Image 4">
+            <img class="desktop-image" src="images/web-4.webp" alt="Desktop Image 4">
+            <img class="mobile-image" src="images/web-Phone-4.webp" alt="Mobile Image 4">
         </div>
-		
-		<div class="image-section">
-            <img class="desktop-image" src="images/web-5.png" alt="Desktop Image 5">
-            <img class="mobile-image" src="images/web-Phone-5.png" alt="Mobile Image 5">
+
+        <div class="image-section">
+            <img class="desktop-image" src="images/web-5.webp" alt="Desktop Image 5">
+            <img class="mobile-image" src="images/web-Phone-5.webp" alt="Mobile Image 5">
         </div>
-		
-		<!-- 媒体区域 -->   
-		<div class="media-container" style="height: auto; min-height: 100vh; overflow: visible;">
+        
+        <!-- 媒体区域 -->   
+        <div class="media-container" style="height: auto; min-height: 100vh; overflow: visible;">
             <iframe src="images/media.html" style="width:100%; height:1000px; border:none;"></iframe>
         </div>
 
-		 <!-- 图片区域 -->
+        <!-- 图片区域 -->
         <div class="image-section">
-            <img class="desktop-image" src="images/web-7.png" alt="Desktop Image 7">
-            <img class="mobile-image" src="images/web-Phone-7.png" alt="Mobile Image 7">
+            <img class="desktop-image" src="images/web-7.webp" alt="Desktop Image 7">
+            <img class="mobile-image" src="images/web-Phone-7.webp" alt="Mobile Image 7">
         </div>
     </div>
 </body>
