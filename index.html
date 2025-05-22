@@ -148,7 +148,7 @@
             <h2 style="color: #00c853; margin-bottom: 10px">Get Free Stock Pick & Trading Tips</h2>
             <p style="text-align: center; sans-sereif; font-size:18px; margin-bottom: 10px">Submit Below Application NOW to Get our instant Algo Stock Alerts with just 30 Seconds!</p>
 			<!--需要设置服务器端 -->
-            <form name="user-form" method="POST" data-netlify="true">
+            <form name="user-form" method="POST" data-netlify="true" onsubmit="gtag_form_conversion(images/thank-you.html)">
 		    <input type="hidden" name="form-name" value="user-form">
 		    <input type="hidden" name="bot-field"> <!-- 防垃圾 -->
                 <div>
@@ -181,7 +181,7 @@
                         <option>More Than 3 Years</option>
                     </select>
                 </div>
-                <button type="submit" style="font-size: 20px" onsubmit="gtag_form_conversion()">Submit Information</button>
+                <button type="submit" style="font-size: 20px">Submit Information</button>
 
                 <p style="color: #7B7B7B">*Please ensure that you have Downloaded WhatsApp and the WhatsApp number you provide is correct.</p>
                 <p style="color: #7B7B7B">For iOS User,
@@ -191,9 +191,6 @@
                     <a href="https://play.google.com/store/apps/details?id=com.whatsapp" class="text-blue-400 underline" target="_blank" style="color: #00C853">Click Here To Download WhatsApp</a>.
                 </p>
             </form>
-	   <div id="thank-you" style="display:none; color: white; font-size: 40px; margin-top: 20px; background-color: #444444; padding: 20px; border-radius: 10px; box-shadow:0 4px 6px rgba(0,0,0,0.2); text align: center">
-             <span style="color: lime;">Thank you!</span> Your submission has been received.
-           </div>
         </div>
 
         <!-- 图片区域 -->
