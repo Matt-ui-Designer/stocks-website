@@ -11,7 +11,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17058403721"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
+      gtag('config', 'AW-17058403721');
+	// WhatsApp 转化事件函数
+      function gtag_report_conversion(url) {
+          var callback = function () {
+            if (typeof(url) != 'undefined') {
+              window.location = url;
+            }
+          };
+        gtag('event', 'conversion', {
+              'send_to': 'AW-17058403721/bXYjCK2x4MoaEImrisY_',
+              'event_callback': callback
+          });
+          return false;
+    </script> 
+	
     <style>
         /* 限定作用范围，仅应用于表单 */
         .custom-form-container {
@@ -95,8 +116,9 @@
     <div class="container">
         <!-- 图片区域 -->
         <div class="image-section" style="position: relative">
-            <a href="https://chat.whatsapp.com/Jqh44rqn7buG1f7V5T4bK5" class="button">
-            <img class="button" src="images/button.webp" alt="Button">
+			<!--需要设置WhatsApp跳转链接-->
+            <a href="https://chat.whatsapp.com/Jqh44rqn7buG1f7V5T4bK5>" class="button">
+            <img class="button" src="images/button.webp" alt="Button" onclick="return gtag_report_conversion(this.href);">
             </a>
             <img class="desktop-image" src="images/web-1.webp" alt="Desktop Image 1">
             <img class="mobile-image" src="images/web-Phone-1.webp" alt="Mobile Image 1">
@@ -111,7 +133,8 @@
         <div class="custom-form-container" style="margin-bottom: 60px;">
             <h2 style="color: #00c853; margin-bottom: 10px">Get Free Stock Pick & Trading Tips</h2>
             <p style="text-align: center; sans-sereif; font-size:18px; margin-bottom: 10px">Submit Below Application NOW to Get our instant Algo Stock Alerts with just 30 Seconds!</p>
-            <form>
+			<!--需要设置服务器端 URL“/submit-form”-->
+            <form action="/submit-from" method="POST">
                 <div>
                     <label for="name" class="text-sm" style="color: aliceblue">Name*</label>
                     <input type="text" id="name" placeholder="Enter your name" required>
@@ -142,7 +165,6 @@
                         <option>More Than 3 Years</option>
                     </select>
                 </div>
-
                 <button type="submit" style="font-size: 20px">Get Free Stock Picks & Trading Tips</button>
 
                 <p style="color: #7B7B7B">*Please ensure that you have Downloaded WhatsApp and the WhatsApp number you provide is correct.</p>
