@@ -33,12 +33,17 @@
           return false;
 	  }
 	// 表单提交转化
-      function gtag_form_conversion() {
+      function gtag_form_conversion(url) {
+	    var callback = function () {
+            if (typeof(url) != 'undefined') {
+              window.location = url;
+            }
+          };
         gtag('event', 'conversion', {
               'send_to': 'AW-17058403721/21qiCOSdyMQaEImrisY_',
-			  'event_callback': callback
+	      'event_callback': callback
           });
-		  return false;
+	  return false;
       }
     </script> 
 	
